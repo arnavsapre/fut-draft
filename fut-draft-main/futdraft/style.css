@@ -4,6 +4,7 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #334155;
+    font-family: Times-New-Roman, Times, serif;
 }
 
 ul li {
@@ -32,16 +33,17 @@ body {
 
 .welcome {
     background-color: #334155;
-    color: white;
+    color: #CCCCFF;
     padding: 50px 20px;
     text-align: center;
     font-size: 30px;
     margin: 0 0 10px 0;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 
 .content-container {
-    margin: 0 auto;
     padding: 20px;
     display: flex;
     gap: 16px;
@@ -60,7 +62,6 @@ img {
     height: 75%;
 }
 
-
 .div h3 {
     font-size: 17px;
     margin-bottom: 8px;
@@ -77,5 +78,19 @@ img {
 }
 
 .d1:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+.d1 button{
+    background-color: #4CAF50;
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+.d1 a {
+    text-decoration: none;
+    color: white;
 }
