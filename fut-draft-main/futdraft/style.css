@@ -3,7 +3,10 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #334155;
+    background-color: #111111;
+    /* Dark black for the menu bar */
+    border-bottom: 2px solid #d4af37;
+    /* Gold border line */
 }
 
 ul li {
@@ -12,31 +15,41 @@ ul li {
 
 ul li a {
     display: block;
-    color: #ffffff;
+    color: #d4af37;
+    /* Gold text for links */
     text-align: center;
     padding: 18px 22px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 ul li a:hover {
-    background-color: #a8f1e8d6;
-    color: #334155;
+    background-color: #d4af37;
+    /* Gold background on hover */
+    color: #000000;
+    /* Black text on hover */
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f1f5f9;
-    color: #1f2937;
+    background-color: #1a1a1a;
+    /* Dark charcoal background */
+    color: #ffffff;
+    /* White text for easy reading */
 }
 
 .welcome {
-    background-color: #334155;
-    color: white;
+    background-color: #111111;
+    /* Dark black background */
+    color: #d4af37;
+    /* Gold text */
     padding: 50px 20px;
     text-align: center;
     font-size: 30px;
     margin: 0 0 10px 0;
+    border-bottom: 2px solid #d4af37;
+    /* Gold line under the welcome box */
 }
 
 
@@ -48,46 +61,63 @@ body {
 }
 
 .content-container div {
-    width: 10000px;
-    height: 500px;
-    background-color: #ffffff;
-    border: 1px solid #cbd5e1;
+    width: 32%;
+    height: auto;
+    background-color: #222222;
+    /* Dark grey inside the cards */
+    border: 2px solid #d4af37;
+    /* Thick gold border around cards */
     padding: 16px;
+    border-radius: 8px;
+    /* Slightly rounded corners to look nice */
 }
 
 img {
     width: 100%;
-    height: 75%;
+    height: 200px;
+    /* fixed height for images so they don't break the box */
+    object-fit: cover;
+    /* makes images fit nicely */
+    border-radius: 5px;
+    /* Round the image corners too */
 }
 
+img[src="2.jpg"] {
+    object-position: center 20%;
+    /* shifts the photo a little down inside the crop */
+}
+
+img[src="3.jpg"] {
+    object-position: center 20%;
+    /* shifts the photo a little down inside the crop */
+}
 
 .div h3 {
     font-size: 17px;
     margin-bottom: 8px;
+    color: #d4af37;
+    /* Gold titles */
 }
 
 .div p {
     font-size: 14px;
-    color: #334155;
+    color: #cccccc;
+    /* Light grey text for descriptions */
     line-height: 1.5;
 }
 
-.d1 {
-    transition: transform 0.3s ease;
-}
 
-.d1:hover {
-    transform: scale(1.1);
-}
 
 .play-now-btn {
     display: inline-block;
-    background-color: #334155;
-    color: white;
+    background-color: #0c0a3e;
+    /* Navy blue button */
+    color: #b8860b;
+    /* Dark gold text on button */
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 15px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
