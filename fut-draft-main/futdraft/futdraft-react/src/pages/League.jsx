@@ -14,28 +14,28 @@ function League() {
       <div className="content-container">
         <div className="d1">
           <h3 align="center">Premier League</h3>
-          <img src="/prem.jpg" alt="Premier League" style={{ width: '100%', height: '200px', objectFit: 'cover' }} onError={(e) => { e.target.src = '/highrated-draft.jpg' }} />
+          <img src="/prem.png" alt="Premier League" style={{ width: '100%', height: '200px', objectFit: 'fill' }} />
           <p>Draft players exclusively from England's top league.</p>
           <Link to="/draft" className="play-now-btn">Enter Draft</Link>
         </div>
         
         <div className="d1">
           <h3 align="center">La Liga</h3>
-          <img src="/laliga.jpg" alt="La Liga" style={{ width: '100%', height: '200px', objectFit: 'cover' }} onError={(e) => { e.target.src = '/highrated-draft.jpg' }} />
+          <img src="/laliga.png" alt="La Liga" style={{ width: '100%', height: '200px', objectFit: 'fill' }} />
           <p>Draft players exclusively from Spain's top league.</p>
           <Link to="/draft" className="play-now-btn">Enter Draft</Link>
         </div>
 
         <div className="d1">
           <h3 align="center">Bundesliga</h3>
-          <img src="/bundesliga.jpeg" alt="Bundesliga" style={{ width: '100%', height: '200px', objectFit: 'cover' }} onError={(e) => { e.target.src = '/highrated-draft.jpg' }} />
+          <img src="/bundesliga.png" alt="Bundesliga" style={{ width: '100%', height: '200px', objectFit: 'scale-down' }} />
           <p>Draft players exclusively from Germany's top league.</p>
           <Link to="/draft" className="play-now-btn">Enter Draft</Link>
         </div>
 
         <div className="d1">
           <h3 align="center">Serie A</h3>
-          <img src="/seriea.png" alt="Serie A" style={{ width: '100%', height: '200px', objectFit: 'cover' }} onError={(e) => { e.target.src = '/highrated-draft.jpg' }} />
+          <img src="/seriea.png" alt="Serie A" style={{ width: '100%', height: '200px', objectFit: 'fill' }} />
           <p>Draft players exclusively from Italy's top league.</p>
           <Link to="/draft" className="play-now-btn">Enter Draft</Link>
         </div>
