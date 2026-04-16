@@ -2,22 +2,23 @@ const mysql = require('mysql2/promise');
 
 const pool = mysql.createPool({
     host: "localhost",
-    user: "root",
-    password: "",
-    database: "csv_db 6", // The name of the cylinder icon in phpMyAdmin
+    user: "root",       // Default XAMPP user
+    password: "",       // Default XAMPP password
+    database: "csv_db 7", // Your new database name
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
 });
 
+// Testing the connection for your terminal
 pool.getConnection()
     .then(connection => {
-        console.log("✅ Connected to MySQL Database: csv_db 6");
+        console.log("✅ Successfully connected to: csv_db 7");
         connection.release();
     })
     .catch(err => {
-        console.error("❌ Database connection failed:", err.message);
+        console.error("❌ Connection failed. Is MySQL running in XAMPP?");
+        console.error("Error details:", err.message);
     });
-
 
 module.exports = pool;

@@ -1,31 +1,33 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('./demodb'); // This imports your MySQL connection
+const db = require('./demodb');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 1. The "Front Door" - This is what you see now!
+// 1. Root Route
 app.get('/', (req, res) => {
-    res.send("<h1>IF YOU SEE THIS, THE SERVER IS FINALLY WORKING!</h1><p>Check your player data at: <a href='/api/players'>/api/players</a></p>");
+    res.send("<h1>Server is UP</h1><p>Try <a href='/api/players'>/api/players</a></p>");
 });
 
-// 2. The "Data Room" - This pulls from your CSV table
+// 2. The Players Route (The one that's failing)
 app.get('/api/players', async (req, res) => {
+    console.log("📢 Request received for /api/players"); // Watch your terminal for this!
     try {
-        // Using backticks for the table name helps avoid syntax errors
-        const [rows] = await db.query('SELECT * FROM `fifa_players`');
+        const [rows] = await db.query('SELECT * FROM `fut_draft_player`');
         res.json(rows);
     } catch (err) {
-        console.error("DB Error:", err);
-        res.status(500).json({
-            error: "Database Fetch Failed",
-            message: err.message
-        });
+        console.error("❌ SQL Error:", err.message);
+        res.status(500).json({ error: err.message });
     }
 });
 
-app.listen(5000, () => {
-    console.log("🚀 Server is fully loaded on http://localhost:5000");
+const PORT = 5000;
+app.listen(PORT, () => {
+    console.log(`\n====================================`);
+    console.log(`🚀 SERVER STARTED ON PORT ${PORT}`);
+    console.log(`✅ ROUTE 1: http://localhost:${PORT}/`);
+    console.log(`✅ ROUTE 2: http://localhost:${PORT}/api/players`);
+    console.log(`====================================\n`);
 });
