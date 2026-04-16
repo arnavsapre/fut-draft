@@ -1,5 +1,20 @@
 import React from 'react'
 import './DraftSim.css'
+import img442 from '../../formations/442.png'
+import img433 from '../../formations/433.png'
+import img451 from '../../formations/451.png'
+import img4141 from '../../formations/4141.png'
+import img541 from '../../formations/541.png'
+import img4321 from '../../formations/4321.png'
+
+const formationImages = {
+  '442': img442,
+  '433': img433,
+  '451': img451,
+  '4141': img4141,
+  '541': img541,
+  '4321': img4321
+};
 
 const formations = {
   '442': [
@@ -147,8 +162,27 @@ class DraftSim extends React.Component {
             <div style={{ display: 'flex', justifyContent: 'center', gap: '15px', marginTop: '30px', flexWrap: 'wrap' }}>
               {Object.keys(formations).map(f => (
                 <button key={f} onClick={() => this.selectFormation(f)} 
-                  style={{ padding: '15px 30px', background: '#111', color: 'gold', border: '2px solid gold', borderRadius: '8px', cursor: 'pointer', fontWeight: 'bold' }}>
-                  {f}
+                  style={{
+                    padding: '0',
+                    background: '#111',
+                    color: 'gold',
+                    border: '2px solid gold',
+                    borderRadius: '12px',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                    width: '160px',
+                    overflow: 'hidden',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'stretch',
+                    textAlign: 'center'
+                  }}>
+                  <div style={{ position: 'relative', width: '100%', height: '140px', background: '#000' }}>
+                    <img src={formationImages[f]} alt={`${f} formation`} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                  </div>
+                  <div style={{ padding: '12px 10px', borderTop: '1px solid rgba(255,255,255,0.1)', background: '#111' }}>
+                    {f}
+                  </div>
                 </button>
               ))}
             </div>
