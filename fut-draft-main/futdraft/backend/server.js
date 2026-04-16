@@ -11,9 +11,9 @@ app.get('/', (req, res) => {
     res.send("<h1>Server is UP</h1><p>Try <a href='/api/players'>/api/players</a></p>");
 });
 
-// 2. The Players Route (The one that's failing)
+
 app.get('/api/players', async (req, res) => {
-    console.log("📢 Request received for /api/players"); // Watch your terminal for this!
+    console.log("Request received for /api/players");
     try {
         const [rows] = await db.query('SELECT * FROM `fut_draft_player`');
         res.json(rows);
