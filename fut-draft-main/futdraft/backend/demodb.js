@@ -1,20 +1,23 @@
-var mysql = require('mysql');
+const mysql = require('mysql2/promise');
 
-
-var con = mysql.createConnection({
-
+const pool = mysql.createPool({
     host: "localhost",
-
-    user: "yourusername",
-
-    password: "yourpassword"
-
+    user: "root",
+    password: "",
+    database: "csv_db 6", // The name of the cylinder icon in phpMyAdmin
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
 });
 
+pool.getConnection()
+    .then(connection => {
+        console.log("✅ Connected to MySQL Database: csv_db 6");
+        connection.release();
+    })
+    .catch(err => {
+        console.error("❌ Database connection failed:", err.message);
+    });
 
-con.connect(function (err) {
 
-    if (err) throw err;
-
-    console.log("Connected!");
-});
+module.exports = pool;
